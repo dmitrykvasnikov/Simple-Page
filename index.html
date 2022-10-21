@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="data:," />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/app.min.js" defer></script>
+  <title>Main Page</title>
+</head>
+
+  <body>
+    <header>
+  <div class="request">
+    <form id="request" class="request__form">
+      <span class="request__title">Оставьте заявку и мы перезвоним вам в ближайшее время</span>
+
+      <input type="text" name="name" class="request__name" placeholder="Введите ваше имя" />
+      <input type="tel" name="phone" class="request__phone" placeholder="Введите ваш телефон" />
+      <button class="request__submit" form="request">отправить</button>
+      <span class="request__close"></span>
+    </form>
+  </div>
+  <div class="container header">
+    <a href="index.html" class="header__logo logo">carbonex</a>
+    <nav class="header__menu">
+      <ul class="header__menu_list">
+        <li class="header__menu_item"><a href="index.html" class="header__menu_link">Главная</a></li>
+        <li class="header__menu_item"><a href="industries.html" class="header__menu_link">Отрасли</a></li>
+        <li class="header__menu_item"><a href="catalogue.html" class="header__menu_link">Продукция</a></li>
+        <li class="header__menu_item"><a href="company.html" class="header__menu_link">O компании</a></li>
+        <li class="header__menu_item"><a href="news.html" class="header__menu_link">Новости</a></li>
+        <li class="header__menu_item"><a href="contacts.html" class="header__menu_link">Контакты</a></li>
+      </ul>
+    </nav>
+    <span class="header__burger"><span></span></span>
+    <div class="header__menu_contacts contacts">
+      <a href="tel:+7123456789" class="contacts__phone">
+        <span class="contacts__phone_number">+7 (123) 456 789</span>
+        <span class="contacts__phone_text">Позвонить менеджеру</span>
+      </a>
+      <button class="contacts__request">оставить заявку</button>
+    </div>
+  </div>
+</header>
+
+    <main>
+      <section class="indexabout">
+        <div class="container">
+          <div class="indexabout__content">
+            <p class="indexabout__title">CARBONEX является лидером в области фильтрационных и энергетических решений.</p>
+            <p class="indexabout__text">
+              Наши передовые материалы используются практически во всех отраслях промышленности и затрагивают каждый аспект современной жизни.
+            </p>
+            <a href="catalogue.html" class="indexabout__catalogue">каталог продукции</a>
+          </div>
+        </div>
+      </section>
+      <section class="indexproducts">
+        <div class="container indexproducts__content">
+          <h2 class="indexproducts__title title">отрасли</h2>
+          <p class="indexproducts__text">
+            CARBONEX - является лидером в области фитрованных материалов. Наши передовые материалы используются практически во всех отраслях промышленности.
+          </p>
+          <div class="indexproducts__list">
+            <div class="indexproducts__item productitem">
+              <div class="productitem__logo" style="background-image: url('img/main_prod1.png')"></div>
+              <p class="productitem__title">целлюлоза</p>
+              <a href="industries.html" class="productitem__link">Перейти</a>
+            </div>
+            <div class="indexproducts__item productitem">
+              <div class="productitem__logo" style="background-image: url('img/main_prod2.png')"></div>
+
+              <p class="productitem__title">hepa-фильтры</p>
+              <a href="industries.html" class="productitem__link">Перейти</a>
+            </div>
+            <div class="indexproducts__item productitem">
+              <div class="productitem__logo" style="background-image: url('img/main_prod3.png')"></div>
+              <p class="productitem__title">автомобильные</p>
+              <a href="industries.html" class="productitem__link">Перейти</a>
+            </div>
+            <div class="indexproducts__item productitem">
+              <div class="productitem__logo" style="background-image: url('img/main_prod4.png')"></div>
+              <p class="productitem__title">респираторные помещения</p>
+              <a href="industries.html" class="productitem__link">Перейти</a>
+            </div>
+            <div class="indexproducts__item productitem">
+              <div class="productitem__logo" style="background-image: url('img/main_prod5.png')"></div>
+              <p class="productitem__title">медицинские помещения</p>
+              <a href="industries.html" class="productitem__link">Перейти</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="indexcatalogue">
+        <div class="container">
+          <h2 class="indexcatalogue__title">продукция</h2>
+          <div class="indexcatalogue__list">
+            <div class="indexcatalogue__item">
+              <div class="indexcatalogue__item_content" style="background-image: url('img/main_goods1.png')">
+                <p class="indexcatalogue__item_title">фильтры</p>
+                <p class="indexcatalogue__item_text">CARBONEX - является лидером в области фильтрованных материалов.</p>
+              </div>
+              <a href="catalogue.html" class="indexcatalogue__button cardbutton"><span>Перейти в каталог</span></a>
+            </div>
+            <div class="indexcatalogue__item">
+              <div class="indexcatalogue__item_content" style="background-image: url('img/main_goods2.png')">
+                <p class="indexcatalogue__item_title">фильтры</p>
+                <p class="indexcatalogue__item_text">CARBONEX - является лидером в области фильтрованных материалов.</p>
+              </div>
+              <a href="catalogue.html" class="indexcatalogue__button cardbutton"><span>Перейти в каталог</span></a>
+            </div>
+            <div class="indexcatalogue__item">
+              <div class="indexcatalogue__item_content" style="background-image: url('img/main_goods3.png')">
+                <p class="indexcatalogue__item_title">фильтры</p>
+                <p class="indexcatalogue__item_text">CARBONEX - является лидером в области фильтрованных материалов.</p>
+              </div>
+              <a href="catalogue.html" class="indexcatalogue__button cardbutton"><span>Перейти в каталог</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="indexadvances">
+        <h2 class="indexadvances__title">Преимущества</h2>
+
+        <div class="container indexadvances__list">
+          <div class="indexadvances__item">
+            <picture><source srcset="img/main_advance1.webp" type="image/webp"><img src="img/main_advance1.png" alt="" class="indexadvances__item_icon" /></picture>
+            <p class="indexadvances__item_title">Собственное производство</p>
+            <p class="indexadvances__item_text">CARBONEX - является лидером в области фитрованных материалов. Наши передовые материалы</p>
+          </div>
+          <div class="indexadvances__item">
+            <picture><source srcset="img/main_advance1.webp" type="image/webp"><img src="img/main_advance1.png" alt="" class="indexadvances__item_icon" /></picture>
+            <p class="indexadvances__item_title">Срок изготовления</p>
+            <p class="indexadvances__item_text">
+              CARBONEX - является лидером в области фитрованных материалов. Наши передовые материалы используются практически CARBONEX - является лидером в
+              области фитрованных материалов. Наши передовые материалы используются практически
+            </p>
+          </div>
+          <div class="indexadvances__item">
+            <picture><source srcset="img/main_advance1.webp" type="image/webp"><img src="img/main_advance1.png" alt="" class="indexadvances__item_icon" /></picture>
+            <p class="indexadvances__item_title">Отгрузка товара</p>
+            <p class="indexadvances__item_text">CARBONEX - является лидером в области фитрованных материалов. Наши передовые материалы используются</p>
+          </div>
+        </div>
+      </section>
+      <section class="container indexcompany">
+        <h2 class="index__title title">о компании</h2>
+        <div class="indexcompany__content">
+          <div class="indexcompany__content_text">
+            <p>
+              Имеется спорная точка зрения, гласящая примерно следующее: действия представителей оппозиции набирают популярность среди определенных слоев
+              населения, а значит, должны быть заблокированы в рамках своих собственных рациональных ограничений!
+            </p>
+            <p>
+              Сложно сказать, почему активно развивающиеся страны третьего мира формируют глобальную экономическую сеть и при этом — ассоциативно распределены
+              по отраслям.
+            </p>
+            <p>
+              Однозначно, сделанные на базе интернет-аналитики выводы, которые представляют собой яркий пример континентально-европейского типа политической
+              культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали.
+            </p>
+          </div>
+          <div class="indexcompany__content_logo"></div>
+        </div>
+      </section>
+      <section class="indexnews container">
+        <h2 class="indexnews__title title">новости</h2>
+        <div class="indexnews__list">
+          <div class="indexnews__item">
+            <div class="indexnews__item_logo" style="background-image: url('img/main_news_1.png')"></div>
+            <div class="indexnews__item_title">Жизнь - это химия</div>
+            <div class="indexnews__item_text">CARBONEX - является лидером в области фитрованных материалов.</div>
+            <a href="news.html" class="indexnews__item_button cardbutton"><span>подробнее</span></a>
+          </div>
+          <div class="indexnews__item">
+            <div class="indexnews__item_logo" style="background-image: url('img/main_news_2.png')"></div>
+            <div class="indexnews__item_title">Жизнь - это химия</div>
+            <div class="indexnews__item_text">CARBONEX - является лидером в области фитрованных материалов.</div>
+            <a href="news.html" class="indexnews__item_button cardbutton"><span>подробнее</span></a>
+          </div>
+          <div class="indexnews__item">
+            <div class="indexnews__item_logo" style="background-image: url('img/main_news_3.png')"></div>
+            <div class="indexnews__item_title">Ао “СОрбент” ПОСЕТИЛ ГУБЕРНАТОР</div>
+            <div class="indexnews__item_text">CARBONEX - является лидером в области фитрованных материалов.</div>
+            <a href="news.html" class="indexnews__item_button cardbutton"><span>подробнее</span></a>
+          </div>
+        </div>
+      </section>
+      <section class="indexcontacts container">
+        <h2 class="indexcontacts__title title">контакты компании</h2>
+        <div class="indexcontacts__contacts">
+          <p class="indexcontacts__contacts_title">контактные данные</p>
+          <span>Телефон:</span>
+          <a href="tel:+7123456789">+7 123 456789</a>
+          <span>Адрес</span>
+          <span>Россия, 642300, г. Москва, ул. 8 марта, д.45</span>
+          <span>E-mail</span>
+          <a href="mailto:mail@mail.com">mail@mail.com</a>
+          <button class="indexcontacts__request cardbutton"><span>оставить заявку</span></button>
+        </div>
+        <div class="indexcontacts__logo" style="background-image: url('img/main_contacts.png')"></div>
+      </section>
+    </main>
+    <footer>
+  <div class="container">
+    <div class="footer">
+      <a href="index.html" class="footer__logo logo">carbonex</a>
+      <nav class="footer__menu">
+        <ul class="footer__menu_list">
+          <li class="footer__menu_item"><a href="index.html" class="footer__menu_link">Главная</a></li>
+          <li class="footer__menu_item"><a href="industries.html" class="footer__menu_link">Отрасли</a></li>
+          <li class="footer__menu_item"><a href="#" class="footer__menu_link">Продукция</a></li>
+          <li class="footer__menu_item"><a href="#" class="footer__menu_link">O компании</a></li>
+          <li class="footer__menu_item"><a href="#" class="footer__menu_link">Контакты</a></li>
+        </ul>
+      </nav>
+      <a href="tel:+7123456789" class="footer__contacts">
+        <span class="footer__contacts_number">+7 (123) 456 789</span>
+        <span class="footer__contacts_text">Позвонить менеджеру</span>
+      </a>
+      <span class="footer__copyright">Все права защищены &copy 2022</span>
+      <a class="footer__email" href="mailto:carbonex@yandex.ru">carbonex@yandex.ru</a>
+      <span class="footer__address">Россия, 642300, г. Москва, ул. 8 марта, д.45</span>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
