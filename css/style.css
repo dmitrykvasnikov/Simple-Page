@@ -6,9 +6,10 @@
 /*
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
+		*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) 
  */
 
-*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+*:where(:not(html, iframe, canvas, img, svg, video)) {
   all: unset;
   display: revert;
 }
@@ -32,6 +33,7 @@ button {
 
 ol,
 ul,
+li,
 menu {
   list-style: none;
 }
@@ -52,6 +54,9 @@ table {
 
 input,
 textarea {
+  /* line below added to avoid message in VS code */
+  -moz-user-select: initial;
+       user-select: initial;
   -webkit-user-select: auto;
 }
 
@@ -95,6 +100,11 @@ meter {
   -webkit-user-modify: read-write;
   overflow-wrap: break-word;
   -webkit-line-break: after-white-space;
+  /* line below added to avoid message in VS code */
+  line-break: auto;
+  /* line below added to avoid message in VS code */
+  -moz-user-select: initial;
+       user-select: initial;
   -webkit-user-select: auto;
 }
 
@@ -103,6 +113,8 @@ meter {
 :where([draggable=true]) {
   -webkit-user-drag: element;
 }
+
+/* Remove all animations and transitions for people that prefer not to see them */
 
 @font-face {
   font-family: NotoSans;
@@ -295,6 +307,7 @@ meter {
   letter-spacing: 0.05em;
   transform: scale(0);
   transition: transform 350ms;
+  overflow: auto;
 }
 
 .request.active {
@@ -380,6 +393,10 @@ footer {
   min-height: 140px;
   display: flex;
   align-items: center;
+}
+
+footer > * {
+  flex: 1;
 }
 
 .footer {
@@ -808,7 +825,7 @@ footer {
   text-align: center;
   margin-bottom: 50px;
   line-height: 22px;
-  color: 323232;
+  color: #323232;
 }
 
 .company__cooperation_gallery {
@@ -846,7 +863,7 @@ footer {
 }
 
 .infocontact {
-  color: #323232;
+  color: #323233;
 }
 
 .infocontact span {
@@ -888,7 +905,7 @@ footer {
 }
 
 .industries {
-  color: 323232;
+  color: #323232;
 }
 
 .industries__list {
@@ -950,7 +967,7 @@ footer {
 }
 
 .news {
-  color: 323232;
+  color: #323232;
 }
 
 .news__list {
@@ -1095,8 +1112,7 @@ header:has(+ main.notindex) {
     right: 0;
     bottom: 0;
     margin: 0;
-    overflow: auto;
-    transition: transform 500ms;
+    overflzow: auto;
     transform: translateX(-100%);
     z-index: 99;
   }
@@ -1396,6 +1412,21 @@ header:has(+ main.notindex) {
   .indexproducts__item {
     flex: 100%;
     max-width: initial;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
