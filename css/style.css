@@ -90,11 +90,11 @@ menu {
 */
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /*
-  9. Create a root stacking context
+  11. Create a root stacking context
 */
 
 #root,
