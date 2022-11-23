@@ -1,6 +1,20 @@
+/***
+    The new CSS reset - version 1.7.2 (last updated 23.6.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
 /*
-  1. Use a more-intuitive box-sizing model.
-*/
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+		*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) 
+ */
+
+*:where(:not(html, iframe, canvas, img, svg, video)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
 
 *,
 *::before,
@@ -8,37 +22,23 @@
   box-sizing: border-box;
 }
 
-/*
-  2. Remove default margin
-*/
+/* Reapply the pointer cursor for anchor tags */
 
-* {
-  margin: 0;
+a,
+button {
+  cursor: revert;
 }
 
-/*
-  3. Allow percentage-based heights in the application
-*/
+/* Remove list styles (bullets/numbers) */
 
-html,
-body {
-  height: 100%;
+ol,
+ul,
+li,
+menu {
+  list-style: none;
 }
 
-/*
-  Typographic tweaks!
-  4. Add accessible line-height
-  5. Improve text rendering
-*/
-
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-/*
-  6. Improve media defaults
-*/
+/* For images to not be able to exceed their container */
 
 img,
 picture,
@@ -49,58 +49,77 @@ svg {
   max-width: 100%;
 }
 
-/*
-  7. Remove built-in form typography styles
-*/
+/* removes spacing between cells in tables */
+
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
 
 input,
-button,
-textarea,
-select {
-  font: inherit;
+textarea {
+  /* line below added to avoid message in VS code */
+  -moz-user-select: initial;
+       user-select: initial;
+  -webkit-user-select: auto;
 }
 
-/*
-  8. Avoid text overflows
-*/
+/* revert the 'white-space' property for textarea elements on Safari */
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+
+::-moz-placeholder {
+  color: unset;
+}
+
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
   overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  /* line below added to avoid message in VS code */
+  line-break: auto;
+  /* line below added to avoid message in VS code */
+  -moz-user-select: initial;
+       user-select: initial;
+  -webkit-user-select: auto;
 }
 
-/* 
- 9. Remove list styles (bullets/numbers) 
-*/
+/* apply back the draggable feature - exist only in Chromium and Safari */
 
-ol,
-ul,
-li,
-menu {
-  list-style: none;
+:where([draggable=true]) {
+  -webkit-user-drag: element;
 }
 
-/*
- 10. Remove underline on links
-*/
-
-a {
-  text-decoration: none;
-}
-
-/*
-  11. Create a root stacking context
-*/
-
-#root,
-#__next {
-  isolation: isolate;
-}
+/* Remove all animations and transitions for people that prefer not to see them */
 
 @font-face {
   font-family: NotoSans;
@@ -1098,7 +1117,7 @@ header:has(+ main.notindex) {
     right: 0;
     bottom: 0;
     margin: 0;
-    overflzow: auto;
+    overflow: auto;
     transform: translateX(-100%);
     z-index: 99;
   }
@@ -1398,6 +1417,21 @@ header:has(+ main.notindex) {
   .indexproducts__item {
     flex: 100%;
     max-width: initial;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
